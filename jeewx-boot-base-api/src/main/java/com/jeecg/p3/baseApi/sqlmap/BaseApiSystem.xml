@@ -37,11 +37,13 @@
     <select id="getBrushTicketCount" parameterType="Object" resultType="java.lang.Boolean">
 		<![CDATA[
 
-                 SELECT
-                            count(*)
-                        FROM
-                            jw_system_brush_ticket_list
-                        WHERE data_id = #{registrationId}
+
+                         SELECT
+                                    count(*)
+                                FROM
+                                    jw_system_brush_ticket_list
+                                WHERE data_id = #{registrationId}
+
 
         ]]>
 	</select>

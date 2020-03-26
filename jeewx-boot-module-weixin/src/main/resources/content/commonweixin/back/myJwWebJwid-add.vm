@@ -136,11 +136,7 @@
 </html>
 <script type="text/javascript" src="$!{basePath}/plug-in/js/Validform_v5.3.2.js"></script>
 <script type="text/javascript" src="$!{basePath}/plug-in/js/forminit.p3.js"></script>
-</script>
-<
-script
-src = "$!{basePath}/plug-in/plugin/webuploader/js/webuploader.js"
-type = "text/javascript" ></script>
+<script src="$!{basePath}/plug-in/plugin/webuploader/js/webuploader.js" type="text/javascript"></script>
 <script src="$!{basePath}/plug-in/plugin/webuploader/js/webuploaderUtils.js" type="text/javascript"></script>
 <link rel="stylesheet" href="$!{basePath}/plug-in/plugin/webuploader/css/webuploader.css"/>
 <script>
