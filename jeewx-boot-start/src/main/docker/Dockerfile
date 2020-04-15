@@ -24,7 +24,7 @@ USER kongqi
 
 #拷贝文件并且重命名
 ARG ARTIFACT
-ADD ${ARTIFACT} app.jar
+ADD jeewx-boot-start-1.0.0.jar app.jar
 
 #并不是真正的发布端口，这个只是容器部署人员与建立image的人员之间的交流，即建立image的人员告诉容器布署人员容器应该映射哪个端口给外界
 EXPOSE 9000
