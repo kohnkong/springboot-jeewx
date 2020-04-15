@@ -1,29 +1,30 @@
 package com.jeecg.p3.weixin.web.core;
 
 import com.jeecg.p3.commonweixin.entity.MyJwWebJwid;
+import com.jeecg.p3.config.PropertiesConfig;
 import com.jeecg.p3.core.annotation.SkipAuth;
 import com.jeecg.p3.core.enums.SkipPerm;
 import com.jeecg.p3.system.service.MyJwWebJwidService;
 import com.jeecg.p3.weixin.service.WechatService;
 import com.jeecg.p3.weixin.util.MessageUtil;
 import com.jeecg.p3.weixin.util.SignUtil;
+import com.jeecg.p3.weixin.util.WeixinUtil;
 import com.jeecg.p3.weixin.vo.resp.TextMessageResp;
+import net.sf.json.JSONObject;
 import org.jeecgframework.p3.core.util.oConvertUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * 微信客户端，请求处理核心类
@@ -34,12 +35,60 @@ import java.util.Map;
 @RequestMapping("/wechatController")
 @SkipAuth(auth = SkipPerm.SKIP_SIGN)
 public class WechatController {
+
     public final static Logger log = LoggerFactory.getLogger(WechatController.class);
 
     @Autowired
     private WechatService wechatService;
+
     @Autowired
     private MyJwWebJwidService webJwidService;
+
+    /**
+     * 多域名授权
+     *
+     * @param request
+     * @param response
+     * @param url      域名授权回调地址
+     * @throws IOException
+     */
+    @RequestMapping(value = "authorize", method = RequestMethod.GET)
+    public void oauthAuthorize(HttpServletRequest request,
+                               HttpServletResponse response,
+                               @RequestParam("url") String url) throws IOException {
+        Optional<String> optionalUrl = Optional.ofNullable(url);
+        if (optionalUrl.isPresent()) {
+            String redirectUri = PropertiesConfig.getCertOAuthDomain() + "wechatController/authorize/redirect?url=" + url;
+            String webOauthUrl = WeixinUtil.web_oauth_url.replace("APPID", PropertiesConfig.getCertAppId()).replace("REDIRECT_URI", redirectUri).replace("SCOPE", "snsapi_userinfo");
+            response.sendRedirect(webOauthUrl);
+        }
+    }
+
+    /**
+     * 第三方授权后获取CODE返回调用方
+     *
+     * @param request
+     * @param response
+     * @param code
+     * @param state
+     * @param url      调用方回调地址
+     * @throws IOException
+     */
+    @RequestMapping(value = "authorize/redirect", method = RequestMethod.GET)
+    public void oauthRedirect(HttpServletRequest request,
+                              HttpServletResponse response,
+                              @RequestParam(value = "code", required = false) String code,
+                              @RequestParam(value = "state", required = false) String state,
+                              @RequestParam("url") String url) throws IOException {
+        String requetUrl = WeixinUtil.web_oauth_accesstoken_url.replace("APPID", "wxec2009860e67972b").replace("SECRET", "d78c4fed023278804c21a71cfd30a2ce").replace("CODE", code);
+        JSONObject resultJson = WeixinUtil.httpRequest(requetUrl, "GET", null);
+        String refreshToken = (String) resultJson.get("refresh_token");
+        requetUrl = "https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=APPID&grant_type=refresh_token&refresh_token=REFRESH_TOKEN";
+        requetUrl = requetUrl.replace("APPID", "wxec2009860e67972b").replace("REFRESH_TOKEN", refreshToken);
+        resultJson = WeixinUtil.httpRequest(requetUrl, "GET", null);
+        String openid = (String) resultJson.get("openid");
+        response.sendRedirect(url + "?code=" + code);
+    }
 
     @RequestMapping(params = "wechat", method = RequestMethod.GET)
     public void wechatGet(HttpServletRequest request,
@@ -117,7 +166,7 @@ public class WechatController {
 
             textMessage.setToUserName(fromUserName);
             textMessage.setFromUserName(toUserName);
-            textMessage.setCreateTime(new Date().getTime());
+            textMessage.setCreateTime(System.currentTimeMillis());
             textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
             textMessage.setContent(respContent);
         } catch (Exception e) {

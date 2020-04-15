@@ -57,6 +57,7 @@ mybatis:
   type-aliases-package: com.jeecg.p3.*.entity
   configuration:
     map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 jeewx:
   #拦截器配置
@@ -98,5 +99,6 @@ oss:
   accessKeySecret: ??
   bucketName: jeewx
   imgDomain: http://static.h5huodong.com
+
 
 

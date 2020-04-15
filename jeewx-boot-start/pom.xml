@@ -61,6 +61,8 @@
     </dependencies>
     <build>
         <plugins>
+
+            <!--            maven打包-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -81,31 +83,36 @@
                 </configuration>
             </plugin>
 
+            <!--            Docker打包-->
             <!--            <plugin>-->
-            <!--            <groupId>com.spotify</groupId>-->
-            <!--            <artifactId>docker-maven-plugin</artifactId>-->
-            <!--            <version>1.2.0</version>-->
-            <!--            <executions>-->
-            <!--                <execution>-->
-            <!--                    <id>build-image</id>-->
-            <!--                    <phase>package</phase>-->
-            <!--                    <goals>-->
-            <!--                        <goal>build</goal>-->
-            <!--                    </goals>-->
-            <!--                </execution>-->
-            <!--            </executions>-->
-            <!--            <configuration>-->
-            <!--                <dockerHost>http://47.52.145.91:2375</dockerHost>-->
-            <!--                <imageName>${project.artifactId}</imageName>-->
-            <!--                <dockerDirectory>src/main/docker</dockerDirectory>-->
-            <!--                <resources>-->
-            <!--                    <resource>-->
-            <!--                        <targetPath>/</targetPath>-->
-            <!--                        <directory>${project.build.directory}</directory>-->
-            <!--                        <include>${project.build.finalName}.jar</include>-->
-            <!--                    </resource>-->
-            <!--                </resources>-->
-            <!--            </configuration>-->
+            <!--                <groupId>com.spotify</groupId>-->
+            <!--                <artifactId>docker-maven-plugin</artifactId>-->
+            <!--                <version>1.2.0</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>build-image</id>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>build</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--                <configuration>-->
+            <!--                    <dockerHost>http://47.52.145.91:2375</dockerHost>-->
+            <!--                    <imageName>${project.artifactId}</imageName>-->
+            <!--                    <imageTags>-->
+            <!--                        <imageTag>${project.version}</imageTag>-->
+            <!--                        <imageTag>latest</imageTag>-->
+            <!--                    </imageTags>-->
+            <!--                    <dockerDirectory>src/main/docker</dockerDirectory>-->
+            <!--                    <resources>-->
+            <!--                        <resource>-->
+            <!--                            <targetPath>/</targetPath>-->
+            <!--                            <directory>${project.build.directory}</directory>-->
+            <!--                            <include>${project.build.finalName}.jar</include>-->
+            <!--                        </resource>-->
+            <!--                    </resources>-->
+            <!--                </configuration>-->
             <!--            </plugin>-->
         </plugins>
     </build>

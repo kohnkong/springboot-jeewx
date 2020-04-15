@@ -2,6 +2,8 @@ package com.jeecg.p3.system.servlet;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +14,8 @@ import java.util.Random;
 
 /**
  * 随机生成验证图片
+ *
+ * @author Mr.Kong
  */
 public class RandCodeImageServlet extends HttpServlet {
     private static final long serialVersionUID = -1257947018545327308L;

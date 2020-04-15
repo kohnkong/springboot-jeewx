@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import org.jeecgframework.p3.core.common.utils.AjaxJson;
 import org.jeecgframework.p3.core.util.SystemTools;
 import org.jeecgframework.p3.core.util.plugin.ViewVelocity;
 import org.jeecgframework.p3.core.utils.common.PageQuery;
+import org.jeecgframework.p3.core.utils.common.PaginatedList;
 import org.jeecgframework.p3.core.web.BaseController;
 import org.jeewx.api.core.exception.WexinReqException;
 import org.slf4j.Logger;
@@ -80,7 +82,8 @@ public class WeixinTmessgaeTaskController extends BaseController {
         VelocityContext velocityContext = new VelocityContext();
         pageQuery.setQuery(query);
         velocityContext.put("weixinTmessgaeTask", query);
-        velocityContext.put("pageInfos", SystemTools.convertPaginatedList(weixinTmessgaeTaskService.queryPageList(pageQuery)));
+        PaginatedList paginatedList = SystemTools.convertPaginatedList(weixinTmessgaeTaskService.queryPageList(pageQuery));
+        velocityContext.put("pageInfos", paginatedList);
         List<WeixinTmessage> tmessages = weixinTmessageService.queryByJwid(jwid);
         velocityContext.put("tmessages", tmessages);
         List<WeixinTag> weixinTags = weixinTagService.getAllTags(jwid);

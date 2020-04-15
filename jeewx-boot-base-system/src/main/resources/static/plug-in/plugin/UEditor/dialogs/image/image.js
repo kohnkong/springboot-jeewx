@@ -143,7 +143,6 @@
             '<form class="edui-image-form" method="post" enctype="multipart/form-data" target="up">' +
             '<input style=\"filter: alpha(opacity=0);\" class="edui-image-file" type="file" hidefocus name="upfile" accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp"/>' +
             '</form>' +
-
             '</div>',
         init: function (editor, $w) {
             var me = this;
@@ -161,26 +160,25 @@
             if (!(UM.browser.ie && UM.browser.version <= 9)) {
                 $(".edui-image-dragTip", me.dialog).css("display", "block");
             }
-
-
             return me;
         },
         render: function (sel, t) {
             var me = this;
-
             $(sel, me.dialog).append($(me.uploadTpl.replace(/%%/g, t)));
-
             return me;
         },
         config: function (sel) {
-            var me = this,
-                // url = me.editor.options.imageUrl;
-                // url = url + (url.indexOf("?") == -1 ? "?" : "&") + "editorid=" + me.editor.id;//初始form提交地址;
-                url = "http://localhost:8000/fastdfs/upload?storePath=1";
+            var me = this;
+            url = me.editor.options.imageUrl;
+            // url = url + (url.indexOf("?") == -1 ? "?" : "&") + "editorid=" + me.editor.id;//初始form提交地址;
+            url = url + (url.indexOf("?") == -1 ? "?" : "&") + "storePath=1";//初始form提交地址;
             $("form", $(sel, me.dialog)).attr("action", url);
             return me;
         },
         uploadComplete: function (r) {
+            if (r.indexOf("<") != -1) {
+                r = r.substring(r.indexOf("{"), r.lastIndexOf("}") + 1);
+            }
             var me = this;
             try {
                 var json = eval('(' + r + ')');
@@ -236,7 +234,6 @@
             if (Upload.showCount !== 0) {
                 return;
             }
-
             $(".edui-image-upload2", this.dialog).hide();
             $(".edui-image-dragTip", this.dialog).show();
             $(".edui-image-upload1", this.dialog).show();
@@ -257,7 +254,7 @@
                             Base.createImgBase64(img, f, me.dialog);
                             var xhr = new XMLHttpRequest();
                             // xhr.open("post", me.editor.getOpt('imageUrl') + "?type=ajax", true);
-                            xhr.open("post", "http://localhost/upload/image?storePath=1", true);
+                            xhr.open("post", "http://localhost/image/dragUpload?storePath=1", true);
                             // xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
                             // xhr.setRequestHeader("Content-Type","multipart/form-data; boundary="+boundary);
 

@@ -1,6 +1,7 @@
 package com.jeecg.p3.tmessage.service.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 

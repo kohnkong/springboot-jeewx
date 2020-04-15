@@ -269,7 +269,7 @@ public class WeixinNewsitemController extends BaseController {
 //                author:sunkai--date:2018-10-10--for:上传图片时更换图片名---
                 Map<String, String> params = new HashMap<>();
                 params.put("storePath", "1");
-                String resultMap = FastdfsUtils.httpClientUploadFile(multifile);
+                String resultMap = FastdfsUtils.httpClientUploadFile(multifile, params);
                 JSONObject jsonObject = JSONObject.parseObject(resultMap);
                 boolean result = (boolean) jsonObject.get("success");
                 if (result) {

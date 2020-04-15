@@ -53,7 +53,6 @@ public class RefreshTokenTask {
         LOG.info("===================重置公众号AccseeToken定时任务开启==========================");
         long start = System.currentTimeMillis();
         try {
-
             //1.重置第三方平台AccessTOKEN
             resetComponentAccessToken();
 

@@ -17,6 +17,20 @@ public class PropertiesConfig {
 
     private static String fastdfsApiUrl;
 
+    private static String certOAuthDomain;
+
+    private static String certAppId;
+
+    @Value("${certAppId}")
+    public static void setCertAppId(String certAppId) {
+        PropertiesConfig.certAppId = certAppId;
+    }
+
+    @Value("${certOAuthDomain}")
+    public void setCertOAuthDomain(String certOAuthDomain) {
+        PropertiesConfig.certOAuthDomain = certOAuthDomain;
+    }
+
     @Value("${imageUrl}")
     public void setImageUrl(String imageUrl) {
         PropertiesConfig.imageUrl = imageUrl;
@@ -34,4 +48,13 @@ public class PropertiesConfig {
     public static String getFastdfsApiUrl() {
         return fastdfsApiUrl;
     }
+
+    public static String getCertOAuthDomain() {
+        return certOAuthDomain;
+    }
+
+    public static String getCertAppId() {
+        return certAppId;
+    }
+
 }

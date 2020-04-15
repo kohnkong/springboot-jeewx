@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.Map;
 
 /**
  * @Auther: Mr.Kong
@@ -25,7 +26,7 @@ import java.nio.charset.Charset;
  */
 public class FastdfsUtils {
 
-    public static String httpClientUploadFile(MultipartFile multipartFile) throws Exception {
+    public static String httpClientUploadFile(MultipartFile multipartFile, Map<String, String> paramMap) throws Exception {
         File file = MultipartFileToFile.multipartFileToFile(multipartFile);
         CloseableHttpClient httpClient = HttpClients.createDefault();
         String result = "";
@@ -50,8 +51,9 @@ public class FastdfsUtils {
             // binary
 //            builder.addBinaryBody("name=\"multipartFile\"; filename=\"test.docx\"", new FileInputStream(file), ContentType.MULTIPART_FORM_DATA, fileName);// 文件流
             //其他参数
+            String storePath = paramMap.get("storePath");
             builder.addTextBody("filename", fileName, ContentType.create("text/plain", Consts.UTF_8));
-            builder.addTextBody("storePath", "1", ContentType.create("application/json", Consts.UTF_8));
+            builder.addTextBody("storePath", storePath, ContentType.create("application/json", Consts.UTF_8));
             //HttpEntity
             HttpEntity entity = builder.build();
             httpPost.setEntity(entity);

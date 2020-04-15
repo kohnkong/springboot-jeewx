@@ -401,7 +401,7 @@ public class MyJwWebJwidController extends BaseController {
 //		String filename = OSSBootUtil.upload(uploadify , "upload/img/commonweixin");
             Map<String, String> params = new HashMap<>();
             params.put("storePath", "1");
-            String resultMap = FastdfsUtils.httpClientUploadFile(uploadify);
+            String resultMap = FastdfsUtils.httpClientUploadFile(uploadify, params);
             com.alibaba.fastjson.JSONObject jsonObject = com.alibaba.fastjson.JSONObject.parseObject(resultMap);
             boolean result = (boolean) jsonObject.get("success");
             if (result) {
