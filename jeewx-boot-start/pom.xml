@@ -101,23 +101,30 @@
                     </execution>
                 </executions>
                 <configuration>
-<!--                    <dockerHost>http://47.52.145.91:2375</dockerHost>-->
-<!--                    <imageName>${project.artifactId}</imageName>-->
-<!--                    <imageTags>-->
-<!--                        <imageTag>${project.version}</imageTag>-->
-<!--                        <imageTag>latest</imageTag>-->
-<!--                    </imageTags>-->
-<!--                    <dockerDirectory>src/main/docker</dockerDirectory>-->
-<!--                    <resources>-->
-<!--                        <resource>-->
-<!--                            <targetPath>/</targetPath>-->
-<!--                            <directory>${project.build.directory}</directory>-->
-<!--                            <include>${project.build.finalName}.jar</include>-->
-<!--                        </resource>-->
-<!--                    </resources>-->
+                    <!--                    <dockerHost>http://47.52.145.91:2375</dockerHost>-->
+                    <!--                    <imageName>${project.artifactId}</imageName>-->
+                    <!--                    <imageTags>-->
+                    <!--                        <imageTag>${project.version}</imageTag>-->
+                    <!--                        <imageTag>latest</imageTag>-->
+                    <!--                    </imageTags>-->
+                    <!--                    <dockerDirectory>src/main/docker</dockerDirectory>-->
+                    <!--                    <resources>-->
+                    <!--                        <resource>-->
+                    <!--                            <targetPath>/</targetPath>-->
+                    <!--                            <directory>${project.build.directory}</directory>-->
+                    <!--                            <include>${project.build.finalName}.jar</include>-->
+                    <!--                        </resource>-->
+                    <!--                    </resources>-->
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <!-- 上下文路径配置，此处设置为项目根路径 用来读取Dockerfile-->
                     <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
                     <buildArgs>
                         <ARTIFACT>target/${project.build.finalName}.${project.packaging}</ARTIFACT>
                     </buildArgs>
