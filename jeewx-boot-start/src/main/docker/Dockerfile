@@ -17,7 +17,7 @@ VOLUME /tmp
 
 #WORKDIR /home/kongqi
 
-#ADD  entrypoint.sh entrypoint.sh
+ADD  entrypoint.sh entrypoint.sh
 #RUN chmod 755 entrypoint.sh && chown kongqi:kongqi entrypoint.sh
 #RUN chmod -R +x /home/kongqi
 
