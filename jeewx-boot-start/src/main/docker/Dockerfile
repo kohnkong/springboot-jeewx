@@ -13,9 +13,9 @@ MAINTAINER Mr.Kong@by 1031652818@qq.com
 VOLUME /tmp
 
 # 添加用户
-#RUN adduser -D -s /bin/sh kongqi
+RUN adduser -D -s /bin/sh kongqi
 
-#WORKDIR /home/kongqi
+WORKDIR /home/kongqi
 
 ADD  entrypoint.sh entrypoint.sh
 RUN chmod 755 entrypoint.sh && chown kongqi:kongqi entrypoint.sh
