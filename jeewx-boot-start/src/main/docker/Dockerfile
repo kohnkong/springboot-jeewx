@@ -22,7 +22,7 @@ RUN chmod 755 entrypoint.sh && chown kongqi:kongqi entrypoint.sh
 
 USER kongqi
 
-RUN chmod /home/kongqi
+RUN chmod +x /home/kongqi
 
 #拷贝文件并且重命名
 ARG ARTIFACT
