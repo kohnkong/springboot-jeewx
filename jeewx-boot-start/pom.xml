@@ -31,6 +31,9 @@
         </repository>
     </repositories>
 
+    <properties>
+        <docker.image.prefix>${project.groupId}</docker.image.prefix>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -83,37 +86,43 @@
                 </configuration>
             </plugin>
 
-            <!--            Docker打包-->
-            <!--            <plugin>-->
-            <!--                <groupId>com.spotify</groupId>-->
-            <!--                <artifactId>docker-maven-plugin</artifactId>-->
-            <!--                <version>1.2.0</version>-->
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <id>build-image</id>-->
-            <!--                        <phase>package</phase>-->
-            <!--                        <goals>-->
-            <!--                            <goal>build</goal>-->
-            <!--                        </goals>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-            <!--                <configuration>-->
-            <!--                    <dockerHost>http://47.52.145.91:2375</dockerHost>-->
-            <!--                    <imageName>${project.artifactId}</imageName>-->
-            <!--                    <imageTags>-->
-            <!--                        <imageTag>${project.version}</imageTag>-->
-            <!--                        <imageTag>latest</imageTag>-->
-            <!--                    </imageTags>-->
-            <!--                    <dockerDirectory>src/main/docker</dockerDirectory>-->
-            <!--                    <resources>-->
-            <!--                        <resource>-->
-            <!--                            <targetPath>/</targetPath>-->
-            <!--                            <directory>${project.build.directory}</directory>-->
-            <!--                            <include>${project.build.finalName}.jar</include>-->
-            <!--                        </resource>-->
-            <!--                    </resources>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
+            <!--Docker打包-->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+<!--                    <dockerHost>http://47.52.145.91:2375</dockerHost>-->
+<!--                    <imageName>${project.artifactId}</imageName>-->
+<!--                    <imageTags>-->
+<!--                        <imageTag>${project.version}</imageTag>-->
+<!--                        <imageTag>latest</imageTag>-->
+<!--                    </imageTags>-->
+<!--                    <dockerDirectory>src/main/docker</dockerDirectory>-->
+<!--                    <resources>-->
+<!--                        <resource>-->
+<!--                            <targetPath>/</targetPath>-->
+<!--                            <directory>${project.build.directory}</directory>-->
+<!--                            <include>${project.build.finalName}.jar</include>-->
+<!--                        </resource>-->
+<!--                    </resources>-->
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <!-- 上下文路径配置，此处设置为项目根路径 用来读取Dockerfile-->
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <buildArgs>
+                        <ARTIFACT>target/${project.build.finalName}.${project.packaging}</ARTIFACT>
+                    </buildArgs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
