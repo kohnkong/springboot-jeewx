@@ -19,7 +19,7 @@ WORKDIR /home/kongqi
 
 ADD  entrypoint.sh entrypoint.sh
 RUN chmod 755 entrypoint.sh && chown kongqi:kongqi entrypoint.sh
-RUN chmod -R +x /home/kongqi
+RUN chmod -R 777 /home/kongqi
 
 USER kongqi
 
