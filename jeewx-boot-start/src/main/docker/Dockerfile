@@ -19,8 +19,8 @@ WORKDIR /home/kongqi
 
 ADD  entrypoint.sh entrypoint.sh
 RUN chmod 755 entrypoint.sh && chown kongqi:kongqi entrypoint.sh
-RUN mkdir /home/kongqi/logs
-RUN chmod -R 777 /home/kongqi/logs
+RUN mkdir /logs
+RUN chmod -R 777 /logs
 
 USER kongqi
 
