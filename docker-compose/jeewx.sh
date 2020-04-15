@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 docker-compose -f jeewx.yml stop
 
