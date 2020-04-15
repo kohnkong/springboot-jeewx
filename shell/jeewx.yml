@@ -1,0 +1,21 @@
+version: '2'
+services:
+      web:
+        image: org.jeewxframework.boot/jeewx-boot-start
+        hostname: jeewx
+        container_name: jeewx
+        #volumes:
+        #    - /data/spring-boot-jeewx/logs:/logs
+        ports:
+            - 9000:9000
+        network_mode: bridge  # 连接外部容器
+        #env_file: ./common.env
+        #extends:
+        #  file: common.yml
+        #  service: common
+
+#networks:
+#  default:
+#    external:
+#      name: tx_sit
+

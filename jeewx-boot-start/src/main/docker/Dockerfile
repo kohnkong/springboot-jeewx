@@ -19,8 +19,9 @@ WORKDIR /home/kongqi
 
 ADD  entrypoint.sh entrypoint.sh
 RUN chmod 755 entrypoint.sh && chown kongqi:kongqi entrypoint.sh
-RUN mkdir /logs
-RUN chmod -R 777 /logs
+
+# 创建logback日志生成文件目录并授予权限
+RUN mkdir /logs && chmod -R 777 /logs
 
 USER kongqi
 
