@@ -126,7 +126,7 @@
                         </resource>
                     </resources>
                     <buildArgs>
-                        <ARTIFACT>target/${project.build.finalName}.${project.packaging}</ARTIFACT>
+                        <ARTIFACT>${project.build.finalName}.${project.packaging}</ARTIFACT>
                     </buildArgs>
                 </configuration>
             </plugin>

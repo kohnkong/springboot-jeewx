@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ---------使用jar方式部署------------
+
 #查询所有java运行程序进程id
 #ID=`ps -ef | grep java | grep -v "grep" | awk '{print $2}'`
 
