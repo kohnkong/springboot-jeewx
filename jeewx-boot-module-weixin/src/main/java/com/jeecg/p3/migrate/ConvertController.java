@@ -47,12 +47,11 @@ public class ConvertController {
         // MultipartFile to File
         file.transferTo(excelFile);
 
-
         String access_token = null;
         if (jedis.get("access_token") != null) {
             access_token = jedis.get("access_token");
         } else {
-            AUTHURL = AUTHURL.replace("APPID", NEW_APPID).replace("SECRET", APPSECRET);
+            AUTHURL = AUTHURL.replace("APPID", "wx8bdda991b9465bce").replace("SECRET", "f2f399a87563978a474cf47bbdc1923e");
             JSONObject jsonObject = WeiXinHttpUtil.sendGet(AUTHURL);
             access_token = (String) jsonObject.get("access_token");
             jedis.set("access_token", access_token);
@@ -60,49 +59,19 @@ public class ConvertController {
         }
         CHANGEOPENIDURL = CHANGEOPENIDURL.replace("ACCESS_TOKE", access_token);
         ArrayList<String> arrayList = new ArrayList<>();
-        readTxt(excelFile);
+        readTxt(arrayList, excelFile);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("openid_list", arrayList.toArray());
         jsonObject.put("from_appid", OLD_APPID);
         String result = HttpClientUtil.sendJsonStr(CHANGEOPENIDURL, jsonObject.toString());
-        JSONObject resultJson = JSONObject.parseObject(result);
-        if (resultJson.get("errmsg").equals("ok")) {
-            try {
-                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("D:/结果.txt")),
-                        "UTF-8"));
-
-                List<JSONObject> result_list = (List) resultJson.get("result_list");
-
-                for (int i = 0; i < result_list.size(); i++) {
-                    JSONObject jsonObject1 = result_list.get(i);
-                    if (jsonObject1.get("err_msg").equals("ok")) {
-                        String new_openid = (String) jsonObject1.get("new_openid");
-                        bw.write(new_openid);
-                        bw.newLine();
-                    } else {
-                        bw.write("空");
-                        bw.newLine();
-                    }
-                }
-
-//                for (String name : result_list) {
-//
-//                }
-                bw.close();
-            } catch (Exception e) {
-                System.err.println("write errors :" + e);
-            }
-        }
-
+        // 写入结果集
+        writeTxt(result);
         //程序结束时，删除临时文件
         deleteFile(excelFile);
         return result;
     }
 
-    private void readTxt(File excelFile) {
-    }
-
-    private ArrayList<String> readTxt(ArrayList<String> arrayList,File file){
+    private void readTxt(ArrayList<String> arrayList, File file) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String s = null;
@@ -113,7 +82,30 @@ public class ConvertController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return arrayList;
+    }
+
+    private void writeTxt(String result) {
+        JSONObject resultJson = JSONObject.parseObject(result);
+        if (resultJson.get("errmsg").equals("ok")) {
+            try {
+                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("D:/result_print.txt")),
+                        "UTF-8"));
+                List<JSONObject> resultList = (List) resultJson.get("result_list");
+                for (JSONObject resultListJson : resultList) {
+                    if (resultListJson.get("err_msg").equals("ok")) {
+                        String new_openid = (String) resultListJson.get("new_openid");
+                        bw.write(new_openid);
+                        bw.newLine();
+                    } else {
+                        bw.write("---------------------------");
+                        bw.newLine();
+                    }
+                }
+                bw.close();
+            } catch (Exception e) {
+                System.err.println("write errors :" + e);
+            }
+        }
     }
 
     private void deleteFile(File... files) {
