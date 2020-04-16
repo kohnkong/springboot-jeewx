@@ -7,8 +7,8 @@ services:
         ports:
           - 9000:9000
         networks:
-          default:
-           - ipv4_address: 172.18.0.10
+          mynetwork:
+           - ipv4_address: 172.18.0.3
         #volumes:
         #    - /data/spring-boot-jeewx/logs:/logs
         #network_mode: bridge  # 连接外部容器
@@ -17,8 +17,15 @@ services:
         #  file: common.yml
         #  service: common
 
+#networks:
+#  default:
+#    external:
+#      name: mynetwork
+
 networks:
-  default:
-    external:
-      name: mynetwork
+  mynetwork:
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1
 
