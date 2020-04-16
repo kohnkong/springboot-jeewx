@@ -4,10 +4,13 @@ services:
         image: org.jeewxframework.boot/jeewx-boot-start
         hostname: jeewx
         container_name: jeewx
+        ports:
+          - 9000:9000
+        networks:
+          default:
+            - ipv4_address: 172.18.0.2
         #volumes:
         #    - /data/spring-boot-jeewx/logs:/logs
-        ports:
-            - 9000:9000
         #network_mode: bridge  # 连接外部容器
         #env_file: ./common.env
         #extends:
