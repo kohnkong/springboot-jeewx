@@ -11,6 +11,6 @@ then
         ./delete_image.sh
 fi
 
-./build.sh jeewx
+./build.sh springboot-jeewx
 
 docker-compose -f jeewx.yml up -d

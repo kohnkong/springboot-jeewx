@@ -1,7 +1,7 @@
 server:
   port: 9000
   servlet:
-    context-path:
+    context-path: /jeewx
     compression:
       enabled: true
       mime-types: application/javascript,application/json,application/xml,text/html,text/xml,text/plain,text/css,image/*
