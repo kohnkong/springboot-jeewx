@@ -8,14 +8,14 @@ services:
         #    - /data/spring-boot-jeewx/logs:/logs
         ports:
             - 9000:9000
-        network_mode: bridge  # 连接外部容器
+        #network_mode: bridge  # 连接外部容器
         #env_file: ./common.env
         #extends:
         #  file: common.yml
         #  service: common
 
-#networks:
-#  default:
-#    external:
-#      name: tx_sit
+networks:
+  default:
+    external:
+      name: mynetwork
 
