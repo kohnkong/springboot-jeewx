@@ -14,17 +14,17 @@ MAINTAINER Mr.Kong@by 1031652818@qq.com
 VOLUME /tmp
 
 # 添加用户
-RUN adduser -D -s /bin/sh kongqi
+#RUN adduser -D -s /bin/sh kongqi
 
-WORKDIR /home/kongqi
+#WORKDIR /home/kongqi
 
-ADD  entrypoint.sh entrypoint.sh
-RUN chmod 755 entrypoint.sh && chown kongqi:kongqi entrypoint.sh
+#ADD  entrypoint.sh entrypoint.sh
+#RUN chmod 755 entrypoint.sh && chown kongqi:kongqi entrypoint.sh
 
 # 创建logback日志生成文件目录并授予权限
-RUN mkdir /logs && chmod -R 777 /logs
+#RUN mkdir /logs && chmod -R 777 /logs
 
-USER kongqi
+#USER kongqi
 
 #拷贝文件并且重命名
 ARG ARTIFACT
@@ -36,4 +36,5 @@ EXPOSE 9000
 #容器启动时运行的命令，相当于我们在命令行中输入java -jar xxxx.jar，为了缩短 Tomcat 的启动时间，添加java.security.egd的系统属性指向/dev/urandom作为 ENTRYPOINT
 #ENTRYPOINT ["java","-jar","/app.jar"]
 #ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["./entrypoint.sh"]
+exec java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar "${HOME}/app.jar" "$@"
