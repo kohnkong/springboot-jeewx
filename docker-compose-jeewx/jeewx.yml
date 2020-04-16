@@ -8,7 +8,7 @@ services:
           - 9000:9000
         networks:
           default:
-           - ipv4_address: 172.18.0.10:
+           - ipv4_address: 172.18.0.10
         #volumes:
         #    - /data/spring-boot-jeewx/logs:/logs
         #network_mode: bridge  # 连接外部容器
