@@ -35,5 +35,5 @@ EXPOSE 9000
 
 #容器启动时运行的命令，相当于我们在命令行中输入java -jar xxxx.jar，为了缩短 Tomcat 的启动时间，添加java.security.egd的系统属性指向/dev/urandom作为 ENTRYPOINT
 #ENTRYPOINT ["java","-jar","/app.jar"]
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","${HOME}/app.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 #ENTRYPOINT ["./entrypoint.sh"]
