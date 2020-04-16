@@ -1,5 +1,6 @@
 # 基础镜像，运行环境打包,（注：docker镜像出现无法初始化servlet,使用FROM java:8）
-FROM openjdk:8-jre-alpine
+#FROM openjdk:8-jre-alpine
+FROM java:8
 
 # 指定系统环境变量或定义环境变量
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
