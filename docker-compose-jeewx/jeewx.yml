@@ -9,6 +9,7 @@ services:
     networks:
       default:
         ipv4_address: 172.18.0.4
+    restart: always
     #  配配自定义网络
     #network:
     #  mynetwork:
