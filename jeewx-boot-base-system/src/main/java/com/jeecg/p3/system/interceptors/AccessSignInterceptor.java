@@ -51,6 +51,8 @@ public class AccessSignInterceptor implements HandlerInterceptor {
             return true;
         } else if (StringUtils.isNotBlank(requestPath) && requestPath.equalsIgnoreCase("MP_verify_2u9LGKjzRvt0aawL.txt")) {
             return true;
+        }else if (StringUtils.isNotBlank(requestPath) && requestPath.equalsIgnoreCase("MP_verify_xgLK7iUrOWODWNjw.txt")){
+            return true;
         }
         String requestUrl = getRequestUrl(request);
         logger.debug("-------------requestUrl-------------" + requestUrl);

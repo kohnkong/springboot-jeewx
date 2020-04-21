@@ -22,7 +22,7 @@ public class PropertiesConfig {
     private static String certAppId;
 
     @Value("${certAppId}")
-    public static void setCertAppId(String certAppId) {
+    public void setCertAppId(String certAppId) {
         PropertiesConfig.certAppId = certAppId;
     }
 

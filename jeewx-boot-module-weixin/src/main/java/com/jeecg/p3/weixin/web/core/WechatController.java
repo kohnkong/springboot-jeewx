@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -58,7 +57,7 @@ public class WechatController {
                                @RequestParam("url") String url) throws IOException {
         Optional<String> optionalUrl = Optional.ofNullable(url);
         if (optionalUrl.isPresent()) {
-            String redirectUri = PropertiesConfig.getCertOAuthDomain() + "wechatController/authorize/redirect?url=" + url;
+            String redirectUri = PropertiesConfig.getCertOAuthDomain() + "jeewx/wechatController/authorize/redirect?url=" + url;
             String webOauthUrl = WeixinUtil.web_oauth_url.replace("APPID", PropertiesConfig.getCertAppId()).replace("REDIRECT_URI", redirectUri).replace("SCOPE", "snsapi_userinfo");
             response.sendRedirect(webOauthUrl);
         }
