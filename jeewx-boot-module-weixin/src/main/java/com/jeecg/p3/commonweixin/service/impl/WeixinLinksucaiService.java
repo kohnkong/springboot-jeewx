@@ -8,7 +8,7 @@ import com.jeecg.p3.commonweixin.entity.WeixinLinksucai;
 /**
  * 描述：</b>WeixinLinksucaiService<br>
  *
- * @author：chen
+ * @author：
  * @since：2016年11月14日 10时16分24秒 星期一
  * @version:1.0
  */

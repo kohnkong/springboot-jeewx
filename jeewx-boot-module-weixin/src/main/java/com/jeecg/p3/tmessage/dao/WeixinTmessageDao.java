@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 描述：</b>消息模板表<br>
  *
- * @author：LeeShaoQing
+ * @author：
  * @since：2018年11月21日 18时21分04秒 星期三
  * @version:1.0
  */

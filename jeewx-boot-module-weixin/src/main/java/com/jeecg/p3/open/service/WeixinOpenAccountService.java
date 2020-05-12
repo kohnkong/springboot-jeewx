@@ -8,7 +8,7 @@ import com.jeecg.p3.open.entity.WeixinOpenAccount;
 /**
  * 描述：</b>WeixinOpenAccountService<br>
  *
- * @author：huangqingquan
+ * @author：
  * @since：2016年11月30日 15时05分20秒 星期三
  * @version:1.0
  */

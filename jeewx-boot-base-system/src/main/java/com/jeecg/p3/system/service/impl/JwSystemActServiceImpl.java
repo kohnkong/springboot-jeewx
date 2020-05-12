@@ -18,7 +18,7 @@ import com.jeecg.p3.system.service.JwSystemActService;
 /**
  * 描述：</b>平台活动表<br>
  *
- * @author：Alex
+ * @author：
  * @since：2017年09月30日 10时05分08秒 星期六
  * @version:1.0
  */

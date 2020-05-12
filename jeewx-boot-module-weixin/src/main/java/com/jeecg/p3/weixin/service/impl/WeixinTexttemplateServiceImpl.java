@@ -17,7 +17,7 @@ import com.jeecg.p3.weixin.dao.WeixinTexttemplateDao;
 /**
  * 描述：</b>文本模板表<br>
  *
- * @author：weijian.zhang
+ * @author：
  * @since：2018年07月13日 12时45分36秒 星期五
  * @version:1.0
  */

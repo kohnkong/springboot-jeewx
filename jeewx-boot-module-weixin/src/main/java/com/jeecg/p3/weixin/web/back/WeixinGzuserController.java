@@ -38,7 +38,7 @@ import net.sf.json.JSONObject;
 /**
  * 描述：</b>粉丝表<br>
  *
- * @author weijian.zhang
+ * @author：
  * @since：2018年07月26日 15时38分40秒 星期四
  * @version:1.0
  */

@@ -8,7 +8,7 @@ import org.jeecgframework.p3.core.utils.common.StringUtils;
 /**
  * 替换工具
  *
- * @author huangqingquan
+ * @author：
  * @version 1.0
  * @since 2017-2-24 14:35:28
  */

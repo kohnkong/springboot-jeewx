@@ -17,7 +17,7 @@
 //
 ///**
 // * 描述：</b>JwWebJwidDaoImpl<br>
-// * @author：pituo
+// * @author：
 // * @since：2015年12月17日 10时45分06秒 星期四 
 // * @version:1.0
 // */

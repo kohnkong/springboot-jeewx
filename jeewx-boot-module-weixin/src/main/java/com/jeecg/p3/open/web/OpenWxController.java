@@ -105,9 +105,7 @@ public class OpenWxController extends BaseController {
             sb.append(line);
         }
         in.close();
-
         String xml = sb.toString();
-
         checkWeixinAllNetworkCheck(request, response, xml);
     }
 

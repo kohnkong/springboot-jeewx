@@ -11,7 +11,7 @@ import com.jeecg.p3.system.entity.JwSystemAuthMutex;
 /**
  * 描述：</b>JwSystemAuthMutexDao<br>
  *
- * @author：junfeng.zhou
+ * @author：
  * @since：2015年12月21日 10时28分28秒 星期一
  * @version:1.0
  */
@@ -26,7 +26,7 @@ public interface JwSystemAuthMutexDao extends GenericDao<JwSystemAuthMutex> {
      *
      * @param
      * @return
-     * @author：junfeng.zhou
+     * @author：
      */
     public List<JwSystemAuthMutex> queryAllAuthMutex();
 }

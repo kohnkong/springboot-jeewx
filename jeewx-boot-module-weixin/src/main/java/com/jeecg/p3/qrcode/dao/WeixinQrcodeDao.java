@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 描述：</b>二维码表<br>
  *
- * @author：sunkai
+ * @author：
  * @since：2018年08月30日 10时29分25秒 星期四
  * @version:1.0
  */

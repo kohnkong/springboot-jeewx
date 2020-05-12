@@ -15,7 +15,7 @@ import com.jeecg.p3.system.vo.MenuFunction;
 /**
  * 描述：</b>JwSystemAuthService<br>
  *
- * @author：junfeng.zhou
+ * @author：
  * @since：2015年12月21日 10时28分27秒 星期一
  * @version:1.0
  */
@@ -67,7 +67,7 @@ public interface JwSystemAuthService {
      *
      * @param
      * @return
-     * @author：junfeng.zhou
+     * @author：
      */
     public Menu queryMenuByAuthId(String authId);
 

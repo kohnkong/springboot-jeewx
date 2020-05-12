@@ -13,7 +13,7 @@
 //
 ///**
 // * 获取二维码
-// * @author huangqingquan
+// * @author：
 // *
 // */
 //@Repository("baseApiJwidDao")

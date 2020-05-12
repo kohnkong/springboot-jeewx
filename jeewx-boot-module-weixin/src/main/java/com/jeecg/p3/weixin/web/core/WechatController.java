@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -32,7 +33,7 @@ import java.util.Optional;
  */
 @Controller
 @RequestMapping("/wechatController")
-@SkipAuth(auth = SkipPerm.SKIP_SIGN)
+@SkipAuth(auth = SkipPerm.SKIP_ALL)
 public class WechatController {
 
     public final static Logger log = LoggerFactory.getLogger(WechatController.class);
@@ -54,11 +55,12 @@ public class WechatController {
     @RequestMapping(value = "authorize", method = RequestMethod.GET)
     public void oauthAuthorize(HttpServletRequest request,
                                HttpServletResponse response,
-                               @RequestParam("url") String url) throws IOException {
+                               @RequestParam("url") String url,
+                               @RequestParam("state") String state) throws IOException {
         Optional<String> optionalUrl = Optional.ofNullable(url);
         if (optionalUrl.isPresent()) {
-            String redirectUri = PropertiesConfig.getCertOAuthDomain() + "jeewx/wechatController/authorize/redirect?url=" + url;
-            String webOauthUrl = WeixinUtil.web_oauth_url.replace("APPID", PropertiesConfig.getCertAppId()).replace("REDIRECT_URI", redirectUri).replace("SCOPE", "snsapi_userinfo");
+            String redirectUri = PropertiesConfig.getCertOAuthDomain() + "wechatController/authorize/redirect?url=" + url;
+            String webOauthUrl = WeixinUtil.web_oauth_url.replace("APPID", PropertiesConfig.getCertAppId()).replace("REDIRECT_URI", redirectUri).replace("SCOPE", "snsapi_userinfo").replace("STATE", state);
             response.sendRedirect(webOauthUrl);
         }
     }
@@ -79,14 +81,16 @@ public class WechatController {
                               @RequestParam(value = "code", required = false) String code,
                               @RequestParam(value = "state", required = false) String state,
                               @RequestParam("url") String url) throws IOException {
-        String requetUrl = WeixinUtil.web_oauth_accesstoken_url.replace("APPID", "wxec2009860e67972b").replace("SECRET", "d78c4fed023278804c21a71cfd30a2ce").replace("CODE", code);
-        JSONObject resultJson = WeixinUtil.httpRequest(requetUrl, "GET", null);
-        String refreshToken = (String) resultJson.get("refresh_token");
-        requetUrl = "https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=APPID&grant_type=refresh_token&refresh_token=REFRESH_TOKEN";
-        requetUrl = requetUrl.replace("APPID", "wxec2009860e67972b").replace("REFRESH_TOKEN", refreshToken);
-        resultJson = WeixinUtil.httpRequest(requetUrl, "GET", null);
-        String openid = (String) resultJson.get("openid");
-        response.sendRedirect(url + "?code=" + code);
+//        String requetUrl = WeixinUtil.web_oauth_accesstoken_url.replace("APPID", "wxec2009860e67972b").replace("SECRET", "d78c4fed023278804c21a71cfd30a2ce").replace("CODE", code);
+//        JSONObject resultJson = WeixinUtil.httpRequest(requetUrl, "GET", null);
+//        String refreshToken = (String) resultJson.get("refresh_token");
+//        requetUrl = "https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=APPID&grant_type=refresh_token&refresh_token=REFRESH_TOKEN";
+//        requetUrl = requetUrl.replace("APPID", "wxec2009860e67972b").replace("REFRESH_TOKEN", refreshToken);
+//        resultJson = WeixinUtil.httpRequest(requetUrl, "GET", null);
+//        String openid = (String) resultJson.get("openid");
+//        String redirecturl = url + "?code=" + code + "&state=" + state + "&openid" + openid;
+        String redirecturl = url + "?code=" + code + "&state=" + state;
+        response.sendRedirect(redirecturl);
     }
 
     @RequestMapping(params = "wechat", method = RequestMethod.GET)

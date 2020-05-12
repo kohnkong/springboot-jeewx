@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 对系统文本操作
  *
- * @author huangqingquan
+ * @author：
  */
 public interface BaseApiActTxtDao {
     /**

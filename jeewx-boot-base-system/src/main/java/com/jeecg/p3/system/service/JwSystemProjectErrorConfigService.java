@@ -7,7 +7,7 @@ import com.jeecg.p3.system.entity.JwSystemProjectErrorConfig;
 /**
  * 描述：</b>JwSystemProjectErrorConfigService<br>
  *
- * @author：junfeng.zhou
+ * @author：
  * @since：2016年02月24日 10时21分06秒 星期三
  * @version:1.0
  */

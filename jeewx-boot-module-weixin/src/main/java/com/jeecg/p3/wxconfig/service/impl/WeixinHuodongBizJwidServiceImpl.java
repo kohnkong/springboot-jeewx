@@ -18,7 +18,7 @@ import com.jeecg.p3.wxconfig.service.WeixinHuodongBizJwidService;
 /**
  * 描述：</b>微信活动jwid表<br>
  *
- * @author：weijian.zhang
+ * @author：
  * @since：2018年08月08日 09时32分33秒 星期三
  * @version:1.0
  */

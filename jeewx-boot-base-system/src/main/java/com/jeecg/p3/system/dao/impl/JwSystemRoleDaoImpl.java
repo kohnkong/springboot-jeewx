@@ -12,7 +12,7 @@
 //
 ///**
 // * 描述：</b>JwSystemRoleDaoImpl<br>
-// * @author：junfeng.zhou
+// * @author：
 // * @since：2015年12月21日 10时28分28秒 星期一 
 // * @version:1.0
 // */

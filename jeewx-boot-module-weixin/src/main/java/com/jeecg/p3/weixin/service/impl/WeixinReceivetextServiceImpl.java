@@ -20,7 +20,7 @@ import com.jeecg.p3.weixin.dao.WeixinReceivetextDao;
 /**
  * 描述：</b>消息存储<br>
  *
- * @author：LeeShaoQing
+ * @author：
  * @since：2018年07月25日 16时02分13秒 星期三
  * @version:1.0
  */

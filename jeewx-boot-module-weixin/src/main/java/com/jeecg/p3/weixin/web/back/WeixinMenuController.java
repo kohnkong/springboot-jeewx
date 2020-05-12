@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * 描述：</b>微信菜单表<br>
  *
- * @author weijian.zhang
+ * @author：
  * @since：2018年07月12日 13时58分38秒 星期四
  * @version:1.0
  */

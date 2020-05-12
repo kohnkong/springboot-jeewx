@@ -16,7 +16,7 @@ import com.alibaba.fastjson.JSONObject;
 /**
  * 微信接口调用
  *
- * @author huangqingquan
+ * @author：
  */
 public class WebAuthWeixinApi {
     private static Logger logger = LoggerFactory.getLogger(WebAuthWeixinApi.class);

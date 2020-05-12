@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 描述：</b>JwSystemAuthDao<br>
  *
- * @author：junfeng.zhou
+ * @author：
  * @since：2015年12月21日 10时28分27秒 星期一
  * @version:1.0
  */
@@ -58,7 +58,7 @@ public interface JwSystemAuthDao extends GenericDao<JwSystemAuth> {
      *
      * @param
      * @return
-     * @author：junfeng.zhou
+     * @author：
      */
     public Menu queryMenuByAuthId(@Param("authId") String authId);
 
@@ -68,7 +68,7 @@ public interface JwSystemAuthDao extends GenericDao<JwSystemAuth> {
      * @param <pre> <li>roleId : 角色编码</li>
      *              </pre>
      * @return
-     * @author：junfeng.zhou
+     * @author：
      */
     public void deleteRoleAuthRels(@Param("roleId") String roleId);
 
@@ -79,7 +79,7 @@ public interface JwSystemAuthDao extends GenericDao<JwSystemAuth> {
      *              <li>authId : 权限编码</li>
      *              </pre>
      * @return
-     * @author：junfeng.zhou
+     * @author：
      */
     public void insertRoleAuthRels(@Param("roleId") String roleId, @Param("authId") String authId);
 

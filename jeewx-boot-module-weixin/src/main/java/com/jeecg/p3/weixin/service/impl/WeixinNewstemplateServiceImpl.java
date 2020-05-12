@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * 描述：</b>图文模板表<br>
  *
- * @author：weijian.zhang
+ * @author：
  * @since：2018年07月13日 12时46分13秒 星期五
  * @version:1.0
  */

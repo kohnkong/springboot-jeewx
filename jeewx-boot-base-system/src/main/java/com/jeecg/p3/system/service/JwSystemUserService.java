@@ -12,7 +12,7 @@ import com.jeecg.p3.system.vo.Menu;
 /**
  * 描述：</b>JwSystemUserService<br>
  *
- * @author：junfeng.zhou
+ * @author：
  * @since：2015年12月21日 10时28分29秒 星期一
  * @version:1.0
  */

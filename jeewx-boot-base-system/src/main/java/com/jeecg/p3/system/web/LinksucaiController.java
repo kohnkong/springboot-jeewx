@@ -46,8 +46,8 @@ import com.jeecg.p3.weixinInterface.entity.WeixinAccount;
 @RequestMapping("/linksucai")
 public class LinksucaiController extends BaseController {
     private static final Logger logger = LoggerFactory.getLogger(LinksucaiController.class);
-    private static final String SCOPE = "snsapi_base"; //网页授权类型静默授权（只能获取到openid）
-    //	private static final String SCOPE = "snsapi_userinfo";//网页授权类型非静默授权（可获取到openid、头像、昵称）
+//    private static final String SCOPE = "snsapi_base"; //网页授权类型静默授权（只能获取到openid）
+    	private static final String SCOPE = "snsapi_userinfo";//网页授权类型非静默授权（可获取到openid、头像、昵称）
 
     @Autowired
     private JwSystemProjectService jwSystemProjectService;

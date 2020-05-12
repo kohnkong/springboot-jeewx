@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 描述：</b>粉丝标签表<br>
  *
- * @author：weijian.zhang
+ * @author：
  * @since：2018年08月13日 14时53分22秒 星期一
  * @version:1.0
  */

@@ -11,7 +11,7 @@
 //
 ///**
 // * 描述：</b>JwSystemProjectErrorConfigDaoImpl<br>
-// * @author：junfeng.zhou
+// * @author：
 // * @since：2016年02月24日 10时21分06秒 星期三 
 // * @version:1.0
 // */

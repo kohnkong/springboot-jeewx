@@ -16,7 +16,7 @@
 //
 ///**
 // * 描述：</b>JwSystemProjectDaoImpl<br>
-// * @author：pituo
+// * @author：
 // * @since：2015年12月21日 17时49分18秒 星期一 
 // * @version:1.0
 // */

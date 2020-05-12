@@ -28,7 +28,7 @@ import com.jeecg.p3.commonweixin.service.WeixinSystemProjectService;
 /**
  * 批量修改项目的活动链接
  *
- * @author huangqingquan
+ * @author：
  */
 @Controller
 @RequestMapping("/commonweixin/back/weixinSystemProject")

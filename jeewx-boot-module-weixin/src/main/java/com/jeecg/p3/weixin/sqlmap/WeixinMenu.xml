@@ -358,6 +358,7 @@
                 AND (father_id='' OR father_id is null)
             </otherwise>
         </choose>
+        ORDER BY orders
     </select>
     <!--update-begin-Author:zhangweijian  Date: 20180723 for：获取一级菜单-->
 

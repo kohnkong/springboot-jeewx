@@ -5,7 +5,7 @@ import com.jeecg.p3.baseApi.vo.OpenAccountVo;
 /**
  * 获取二维码
  *
- * @author huangqingquan
+ * @author：
  */
 public interface BaseApiJwidService {
 

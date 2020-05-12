@@ -3,7 +3,7 @@ package com.jeecg.p3.message.service;
 import net.sf.json.JSONObject;
 
 /**
- * @author：weijian.zhang
+ * @author：
  * @since：2018年08月03日 14时43分17秒 星期五
  * @version:1.0
  */

@@ -26,7 +26,7 @@ import org.jeecgframework.p3.core.web.BaseController;
 /**
  * 描述：</b>JwSystemProjectClassifyController<br>
  *
- * @author huangqingquan
+ * @author：
  * @since：2016年08月08日 09时33分31秒 星期一
  * @version:1.0
  */

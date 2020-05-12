@@ -15,7 +15,7 @@
 //
 ///**
 // * 描述：</b>JwSystemRegisterDaoImpl<br>
-// * @author：alex
+// * @author：
 // * @since：2016年03月23日 18时07分59秒 星期三 
 // * @version:1.0
 // */

@@ -7,7 +7,7 @@ import com.jeecg.p3.weixin.entity.WeixinSubscribe;
 /**
  * 描述：</b>关注欢迎语<br>
  *
- * @author：LeeShaoQing
+ * @author：
  * @since：2018年07月20日 10时12分09秒 星期五
  * @version:1.0
  */

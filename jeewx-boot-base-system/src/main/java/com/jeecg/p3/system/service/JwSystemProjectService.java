@@ -9,7 +9,7 @@ import com.jeecg.p3.system.entity.JwSystemProject;
 /**
  * 描述：</b>JwSystemProjectService<br>
  *
- * @author：pituo
+ * @author：
  * @since：2015年12月21日 17时49分18秒 星期一
  * @version:1.0
  */

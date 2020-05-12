@@ -7,7 +7,7 @@ import com.jeecg.p3.system.vo.WeixinAccountDto;
 /**
  * 描述：</b>JwWebJwidService<br>
  *
- * @author：pituo
+ * @author：
  * @since：2015年12月17日 10时45分06秒 星期四
  * @version:1.0
  */

@@ -8,7 +8,7 @@ import com.jeecg.p3.message.service.SendGroupMessageService;
 import com.jeecg.p3.weixin.util.WeixinUtil;
 
 /**
- * @author：weijian.zhang
+ * @author：
  * @since：2018年08月03日 14时43分17秒 星期五
  * @version:1.0
  */

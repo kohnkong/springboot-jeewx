@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 描述：</b>JwSystemRegisterDao<br>
  *
- * @author：alex
+ * @author：
  * @since：2016年03月23日 18时07分59秒 星期三
  * @version:1.0
  */

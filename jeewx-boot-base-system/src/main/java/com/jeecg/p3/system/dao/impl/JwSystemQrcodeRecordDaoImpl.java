@@ -11,7 +11,7 @@
 //
 ///**
 // * 描述：</b>JwSystemQrcodeRecordDaoImpl<br>
-// * @author：junfeng.zhou
+// * @author：
 // * @since：2016年10月19日 20时24分19秒 星期三 
 // * @version:1.0
 // */

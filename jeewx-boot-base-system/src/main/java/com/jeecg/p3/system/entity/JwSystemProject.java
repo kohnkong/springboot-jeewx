@@ -7,7 +7,7 @@ import org.jeecgframework.p3.core.utils.persistence.Entity;
 /**
  * 描述：</b>JwSystemProject:活动项目管理表<br>
  *
- * @author huangqingquan
+ * @author：
  * @since：2016年08月08日 18时09分26秒 星期一
  * @version:1.0
  */

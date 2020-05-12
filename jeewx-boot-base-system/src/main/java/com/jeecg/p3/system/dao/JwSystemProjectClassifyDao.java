@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 描述：</b>JwSystemProjectClassifyDao<br>
  *
- * @author：huangqingquan
+ * @author：
  * @since：2016年08月08日 09时33分31秒 星期一
  * @version:1.0
  */

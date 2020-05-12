@@ -9,7 +9,7 @@ import com.jeecg.p3.system.entity.JwSystemLogoTitle;
 /**
  * 描述：</b>JwSystemLogoTitleService<br>
  *
- * @author：pituo
+ * @author：
  * @since：2015年12月29日 12时04分49秒 星期二
  * @version:1.0
  */

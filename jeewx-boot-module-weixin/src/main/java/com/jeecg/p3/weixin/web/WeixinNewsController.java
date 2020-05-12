@@ -26,7 +26,7 @@ import java.text.SimpleDateFormat;
 /**
  * 描述：微信文章访问
  *
- * @author weijian.zhang
+ * @author：
  * @since：2018年07月13日 12时46分36秒 星期五
  * @version:1.0
  */

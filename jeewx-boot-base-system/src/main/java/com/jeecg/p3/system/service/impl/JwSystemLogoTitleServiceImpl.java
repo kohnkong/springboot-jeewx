@@ -17,7 +17,7 @@ import com.jeecg.p3.system.dao.JwSystemLogoTitleDao;
 /**
  * 描述：</b>系统logo、title、head和footer设置表<br>
  *
- * @author：liwenhui
+ * @author：
  * @since：2017年08月30日 18时15分25秒 星期三
  * @version:1.0
  */

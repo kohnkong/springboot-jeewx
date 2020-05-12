@@ -13,7 +13,7 @@
 //
 ///**
 // * 描述：</b>JwSystemUserJwidDaoImpl<br>
-// * @author：junfeng.zhou
+// * @author：
 // * @since：2015年12月23日 16时02分42秒 星期三 
 // * @version:1.0
 // */

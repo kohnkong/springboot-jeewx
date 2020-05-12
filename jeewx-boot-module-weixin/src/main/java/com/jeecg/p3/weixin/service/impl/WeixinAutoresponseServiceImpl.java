@@ -17,7 +17,7 @@ import com.jeecg.p3.weixin.dao.WeixinAutoresponseDao;
 /**
  * 描述：</b>关键字表<br>
  *
- * @author：LeeShaoQing
+ * @author：
  * @since：2018年07月20日 10时11分12秒 星期五
  * @version:1.0
  */

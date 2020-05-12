@@ -8,7 +8,7 @@ import com.jeecg.p3.baseApi.vo.TmessageSendVO;
 /**
  * 微信共通方法
  *
- * @author huangqingquan
+ * @author：
  */
 public interface BaseApiWeixinService {
 

@@ -8,7 +8,7 @@ import com.jeecg.p3.system.entity.JwSystemUserJwid;
 /**
  * 描述：</b>JwSystemUserJwidService<br>
  *
- * @author：junfeng.zhou
+ * @author：
  * @since：2015年12月23日 16时02分42秒 星期三
  * @version:1.0
  */

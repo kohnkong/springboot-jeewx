@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * 描述：</b>JwSystemUserDao<br>
  *
- * @author：junfeng.zhou
+ * @author：
  * @since：2015年12月21日 10时28分29秒 星期一
  * @version:1.0
  */

@@ -17,7 +17,7 @@ import com.jeecg.p3.message.dao.WeixinGroupMessageSendDetailDao;
 /**
  * 描述：</b>群发日志明细表<br>
  *
- * @author：weijian.zhang
+ * @author：
  * @since：2018年08月20日 17时49分30秒 星期一
  * @version:1.0
  */

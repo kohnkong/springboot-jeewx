@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * 描述：</b>WeixinOpenAccount:<br>
  *
- * @author huangqingquan
+ * @author：
  * @since：2016年12月05日 17时50分49秒 星期一
  * @version:1.0
  */

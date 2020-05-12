@@ -17,7 +17,7 @@ import com.jeecg.p3.weixin.dao.WeixinTemplateDao;
 /**
  * 描述：</b>图文样式库表<br>
  *
- * @author：weijian.zhang
+ * @author：
  * @since：2018年07月24日 20时01分05秒 星期二
  * @version:1.0
  */

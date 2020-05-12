@@ -17,7 +17,7 @@ import com.jeecg.p3.weixin.dao.WeixinAutoresponseDefaultDao;
 /**
  * 描述：</b>未识别回复语<br>
  *
- * @author：LeeShaoQing
+ * @author：
  * @since：2018年07月20日 10时11分50秒 星期五
  * @version:1.0
  */

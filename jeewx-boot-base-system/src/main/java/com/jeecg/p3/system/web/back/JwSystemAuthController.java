@@ -176,7 +176,7 @@ public class JwSystemAuthController extends BaseController {
     /**
      * 初始化权限
      *
-     * @author：junfeng.zhou
+     * @author：
      */
     @RequestMapping(value = "/initAuth", produces = "text/plain;charset=UTF-8")
     @ResponseBody
@@ -202,7 +202,7 @@ public class JwSystemAuthController extends BaseController {
     /**
      * 编辑角色权限
      *
-     * @author：junfeng.zhou
+     * @author：
      */
     @RequestMapping(value = "/editRoleAuth", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody

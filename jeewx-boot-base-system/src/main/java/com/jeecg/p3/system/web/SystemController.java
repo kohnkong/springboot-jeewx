@@ -599,7 +599,7 @@ public class SystemController extends BaseController {
     }
 //	 /**
 //	  * 生成带参数的二维码
-//	  * @author huangqingquan
+//	  * @author：
 //	  * @since 2016-10-20 09:47:44
 //	  * @param jwid 微信ID
 //	  * @param sceneId 场景Id

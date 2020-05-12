@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 描述：</b>JwSystemActTxtDao<br>
  *
- * @author：junfeng.zhou
+ * @author：
  * @since：2015年11月11日 11时11分51秒 星期三
  * @version:1.0
  */

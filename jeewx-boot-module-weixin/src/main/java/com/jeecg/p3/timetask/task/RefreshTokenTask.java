@@ -55,7 +55,6 @@ public class RefreshTokenTask {
         try {
             //1.重置第三方平台AccessTOKEN
             resetComponentAccessToken();
-
             //2.重置公众号的Token
             Date date = new Date();
             long time = date.getTime() - 1000 * 60 * 90;
@@ -109,7 +108,6 @@ public class RefreshTokenTask {
                     weixinOpenAccount.setComponentAccessToken(jsonObj.getString("component_access_token"));
                     weixinOpenAccount.setGetAccessTokenTime(new Date());
                     weixinOpenAccountService.doEdit(weixinOpenAccount);
-
                     //---------------------第三方平台账号重置token后写入redis缓存-----------------------------
                     try {
                         WeixinAccount po = new WeixinAccount();

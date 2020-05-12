@@ -18,7 +18,7 @@ import com.jeecg.p3.weixin.dao.WeixinNewsitemDao;
 /**
  * 描述：</b>图文模板素材表<br>
  *
- * @author：weijian.zhang
+ * @author：
  * @since：2018年07月13日 12时46分36秒 星期五
  * @version:1.0
  */

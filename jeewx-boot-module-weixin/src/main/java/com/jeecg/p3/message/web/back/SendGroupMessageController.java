@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * 描述：</b>群发消息日志表<br>
  *
- * @author weijian.zhang
+ * @author
  * @since：2018年08月03日 14时43分17秒 星期五
  * @version:1.0
  */

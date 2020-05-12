@@ -4,7 +4,7 @@ package com.jeecg.p3.baseApi.service;
 /**
  * 系统表相关API
  *
- * @author huangqingquan
+ * @author：
  */
 public interface BaseApiSystemService {
 

@@ -3,7 +3,7 @@ package com.jeecg.p3.baseApi.service;
 /**
  * 对系统文本操作
  *
- * @author huangqingquan
+ * @author：
  */
 public interface BaseApiActTxtService {
 

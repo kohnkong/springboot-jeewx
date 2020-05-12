@@ -42,8 +42,6 @@ public class WeixinOpenAccountServiceImpl implements WeixinOpenAccountService {
 
     @Override
     public WeixinOpenAccount queryOneByAppid(String appid) {
-
-
         return weixinOpenAccountDao.queryOneByAppid(appid);
     }
 

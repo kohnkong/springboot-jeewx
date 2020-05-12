@@ -34,7 +34,7 @@ import com.jeecg.p3.weixinInterface.entity.WeixinAccount;
 /**
  * 描述：</b>WeixinOpenAccountController<br>
  *
- * @author huangqingquan
+ * @author：
  * @since：2016年12月05日 17时50分49秒 星期一
  * @version:1.0
  */
